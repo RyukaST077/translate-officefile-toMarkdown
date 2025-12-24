@@ -1,24 +1,24 @@
-# Installer Build (Inno Setup)
+# インストーラービルド (Inno Setup)
 
-This project uses PyInstaller for the runtime bundle and Inno Setup for a Windows installer.
+このプロジェクトは、ランタイムバンドルにPyInstallerを、Windowsインストーラーの作成にInno Setupを使用しています。
 
-## Prerequisites
-- Windows machine
+## 前提条件
+- Windows マシン
 - Inno Setup (6.x)
-- Python 3.10+ with project dependencies installed
+- Python 3.10+ とプロジェクトの依存関係がインストールされていること
 
-## 1) Build the PyInstaller bundle
+## 1) PyInstallerバンドルをビルドする
 
 ```powershell
 python -m pip install -r requirements.txt
 pyinstaller build/pyinstaller.spec
 ```
 
-This produces a one-dir bundle at `dist/DocxXlsxToMarkdown/`.
+これにより、`dist/DocxXlsxToMarkdown/` に one-dir バンドルが生成されます。
 
-## 2) Create the Inno Setup script
+## 2) Inno Setupスクリプトを作成する
 
-Create `installer/DocxXlsxToMarkdown.iss` with content similar to:
+以下の内容で `installer/DocxXlsxToMarkdown.iss` を作成します:
 
 ```ini
 #define MyAppName "DocxXlsxToMarkdown"
@@ -44,13 +44,13 @@ Source: "..\dist\DocxXlsxToMarkdown\*"; DestDir: "{app}"; Flags: ignoreversion r
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 ```
 
-## 3) Build the installer
+## 3) インストーラーをビルドする
 
-Open the `.iss` file in Inno Setup Compiler and click **Build**.
-The installer will be created at `installer/output/DocxXlsxToMarkdown-setup.exe`.
+Inno Setup Compilerで `.iss` ファイルを開き、**Build** をクリックします。
+インストーラーは `installer/output/DocxXlsxToMarkdown-setup.exe` に作成されます。
 
-## 4) Release flow
+## 4) リリースフロー
 
-- The GitHub Actions workflow builds the PyInstaller bundle and uploads a zip artifact.
-- After creating the installer (`.exe`), attach it to the corresponding GitHub Release.
-- If you prefer to automate this, add an Inno Setup build step on Windows and upload the `.exe` as a release asset.
+- GitHub Actionsワークフローは、PyInstallerバンドルをビルドし、zipアーティファクトとしてアップロードします。
+- インストーラー (`.exe`) を作成した後、対応するGitHub Releaseに添付します。
+- これを自動化したい場合は、Windows上でInno Setupビルドステップを追加し、`.exe` をリリースアセットとしてアップロードします。
