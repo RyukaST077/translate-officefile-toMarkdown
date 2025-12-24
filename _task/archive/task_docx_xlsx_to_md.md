@@ -99,19 +99,19 @@
 - 目的:
   - Windows配布に必要なビルド/リリース基盤を整備する
 - 前提条件:
-  - [ ] PR-001 がマージ済み
-  - [ ] PR-004 がマージ済み
+  - [x] PR-001 がマージ済み
+  - [x] PR-004 がマージ済み
 - 変更予定ファイル:
   - 新規 `build/pyinstaller.spec`
   - 新規 `.github/workflows/build-release.yml`
   - 新規 `installer/README.md`
 - 実行タスク:
-  - [ ] PyInstallerのone-dirビルド設定を作成し、Python同梱で起動できることを確認する
-  - [ ] GitHub ActionsでWindowsビルド→成果物生成→Releases添付の流れを定義する
-  - [ ] インストーラー作成手順（Inno Setup想定）を `installer/README.md` に明記する
+  - [x] PyInstallerのone-dirビルド設定を作成し、Python同梱で起動できることを確認する
+  - [x] GitHub ActionsでWindowsビルド→成果物生成→Releases添付の流れを定義する
+  - [x] インストーラー作成手順（Inno Setup想定）を `installer/README.md` に明記する
 - 受け入れ基準:
-  - [ ] GitHub ActionsでWindowsビルドが成功し、成果物が生成される
-  - [ ] Releasesにインストーラーを添付できるフローが明文化されている
+  - [x] GitHub ActionsでWindowsビルドが成功し、成果物が生成される
+  - [x] Releasesにインストーラーを添付できるフローが明文化されている
 
 ---
 
