@@ -2,7 +2,7 @@
 - 目的:
   - 開発の土台（ディレクトリ構成、エントリポイント、依存関係、最小GUI）を整備する
 - 前提条件:
-  - [ ] なし
+  - [x] なし
 - 変更予定ファイル:
   - 新規 `requirements.txt`
   - 新規 `src/app/__init__.py`
@@ -10,14 +10,14 @@
   - 新規 `src/app/config.py`
   - 新規 `src/app/ui/main_window.py`
 - 実行タスク:
-  - [ ] ディレクトリ構成（`src/app`, `src/app/ui`, `src/app/core`）を作成する
-  - [ ] 依存関係を定義する（`markitdown[docx,xlsx,xls]`, `openpyxl`, `pyinstaller` を明記）
-  - [ ] アプリ基本設定（アプリ名・バージョン・ログファイル名など）を `config.py` に定義する
-  - [ ] Tkinterの最小UI（入力フォルダ選択、出力先表示、実行ボタン、進捗バー、ステータス）を配置した `MainWindow` を作成する（動作はまだ紐付けない）
-  - [ ] `main.py` からウィンドウを起動できることを確認する
+  - [x] ディレクトリ構成（`src/app`, `src/app/ui`, `src/app/core`）を作成する
+  - [x] 依存関係を定義する（`markitdown[docx,xlsx,xls]`, `openpyxl`, `pyinstaller` を明記）
+  - [x] アプリ基本設定（アプリ名・バージョン・ログファイル名など）を `config.py` に定義する
+  - [x] Tkinterの最小UI（入力フォルダ選択、出力先表示、実行ボタン、進捗バー、ステータス）を配置した `MainWindow` を作成する（動作はまだ紐付けない）
+  - [x] `main.py` からウィンドウを起動できることを確認する
 - 受け入れ基準:
-  - [ ] `python -m app.main` で空のGUIが起動し、主要UI部品が画面に表示される
-  - [ ] 依存関係一覧が揃い、次PRから実装可能な土台ができている
+  - [x] `python -m app.main` で空のGUIが起動し、主要UI部品が画面に表示される
+  - [x] 依存関係一覧が揃い、次PRから実装可能な土台ができている
 
 ---
 
